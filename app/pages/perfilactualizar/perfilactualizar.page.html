@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-card>
+      <ion-item>
+        <ion-button (click)="cerrarSesion()">
+          Cerrar Sesión    
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-button href='/qr'>
+          Codigo Qr
+        </ion-button>
+      </ion-item>
+            <ion-item>
+        <ion-button href='/perfil'>
+          Perfil
+        </ion-button>
+      </ion-item>
+
+    </ion-card>
+    <ion-title>Actualizar Perfil</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-buttons slot="start">
+    <ion-back-button>Volver</ion-back-button>
+    <ion-icon name="log-out-outline"></ion-icon>
+  </ion-buttons>
+  <ion-button (click)="cerrarSesion()" expand="block" fill="clear" shape="round">
+    <ion-icon name="log-out-outline"></ion-icon>
+  </ion-button>
+
+  <form>
+    <ion-item >
+      <ion-label>usuario:</ion-label>
+      <ion-input type="text" name="txtUsername" placeholder="Rodolfo Jaramillo"[(ngModel)]="usuario.username" disabled></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña:</ion-label>
+      <ion-input type="password" name="txtPass" placeholder="**********"[(ngModel)]="usuario.password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label >Asignatura: </ion-label>
+      <ion-select name="txtRole" [(ngModel)]="usuario.role">
+        <ion-select-option value="Ingles">Ingles</ion-select-option>
+        <ion-select-option value="Habilidades de comunicación">Habilidades de comunicación</ion-select-option>
+        <ion-select-option value="Matematicas">Matematicas</ion-select-option>
+        <ion-select-option value="Desarollo de Software">Desarollo de Software</ion-select-option>
+        <ion-select-option value="Arquitectura de Software">Arquitectura de Software</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="ActualizarUsuario()" expand="block" color="success">Actualizar usuario</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
+

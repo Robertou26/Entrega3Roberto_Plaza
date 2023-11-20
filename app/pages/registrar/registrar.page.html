@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Creando Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Agregar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/"
+       text="volver"
+       color="primary"
+       mode="ios"></ion-back-button>
+  </ion-buttons>
+
+  <form [formGroup]="registroForm">
+    <ion-item lines="full">
+      <ion-label position="floating">usuario:</ion-label>
+      <ion-input type="text" placeholder="Rodolfo Jaramillo" formControlName="username"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña:</ion-label>
+      <ion-input type="password" placeholder="**********" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Asignatura: </ion-label>
+      <ion-select formControlName="rol">
+        <ion-select-option value="Ingles">Ingles</ion-select-option>
+        <ion-select-option value="Habilidades de comunicación">Habilidades de comunicación</ion-select-option>
+        <ion-select-option value="Matematicas">Matematicas</ion-select-option>
+        <ion-select-option value="Desarollo de Software">Desarollo de Software</ion-select-option>
+        <ion-select-option value="Arquitectura de Software">Arquitectura de Software</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="registrar()" expand="block" color="success">Crear usuario</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
